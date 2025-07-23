@@ -22,8 +22,8 @@ resource "aws_cloudfront_distribution" "cf" {
     origin_id   = aws_s3_bucket.s3_static_bucket.id
 
     s3_origin_config {
-#      origin_access_identity = aws_cloudfront_origin_access_identity.cf_s3_origin_access_identity.cloudfront_access_identity_path
-	origin_access_identity = ""
+      #      origin_access_identity = aws_cloudfront_origin_access_identity.cf_s3_origin_access_identity.cloudfront_access_identity_path
+      origin_access_identity = ""
     }
   }
 
@@ -72,7 +72,7 @@ resource "aws_cloudfront_distribution" "cf" {
     }
   }
 
-#  aliases = ["dev.${var.domain}"]
+  #  aliases = ["dev.${var.domain}"]
 
   viewer_certificate {
     #    acm_certificate_arn   = aws_acm_certificate.virginia_cert.arn
